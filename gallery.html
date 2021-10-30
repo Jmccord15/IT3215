@@ -4,6 +4,22 @@
 <head>
     <title>Invitation Page</title>
     <link rel="stylesheet" type="text/css" href="css/main.css" />
+    
+    <script language="javascript">
+        function MouseRollover(MyImage) {
+            MyImage.childNodes[3].style.opacity = 1;
+
+  
+
+}
+
+function MouseOut(MyImage) {
+
+MyImage.childNodes[3].style.opacity = 0;
+
+}
+
+</script>
 </head>
 
 <body>
@@ -28,33 +44,32 @@
         </nav>
     </header>
     <section id="gallery">
-
-<div class="gallery">
+<div class="gallery" onMouseOver="MouseRollover(this)" onMouseOut="MouseOut(this)">
   <a target="_blank" href="images/firefighter.jpg">
     <img src="images/firefighter.jpg" alt="firefighter" width="300" height="200">
   </a>
-  <div class="desc">Add a description of the image here</div>
+  <div class="desc">Fighters</div>
 </div>
 
-<div class="gallery">
+<div class="gallery" onMouseOver="MouseRollover(this)" onMouseOut="MouseOut(this)">
   <a target="_blank" href="images/work.jpg">
     <img src="images/work.jpg" alt="work" width="300" height="200">
   </a>
-  <div class="desc">Add a description of the image here</div>
+  <div class="desc">Team Driven</div>
 </div>
 
-<div class="gallery">
+<div class="gallery" onMouseOver="MouseRollover(this)" onMouseOut="MouseOut(this)">
   <a target="_blank" href="images/silhouette.jpg">
     <img src="images/silhouette.jpg" alt="silhouette" width="300" height="200">
   </a>
-  <div class="desc">Add a description of the image here</div>
+  <div class="desc">Unity</div>
 </div>
 
-<div class="gallery">
+<div class="gallery" onMouseOver="MouseRollover(this)" onMouseOut="MouseOut(this)">
   <a target="_blank" href="images/event.jpg">
     <img src="images/event.jpg" alt="event" width="300" height="200">
   </a>
-  <div class="desc">Add a description of the image here</div>
+  <div class="desc">Diversity</div>
 </div>
 
     </section>

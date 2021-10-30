@@ -38,5 +38,64 @@
     <footer>This events site is for IT3515 tasks.
     </footer>
 </body>
+<script type="text/javascript">
+var imgs = document.images;
+var len = imgs.length;
+var counter = 0;
+var bannerIndex = 0;
+
+function onpageload() {
+    
+    [].forEach.call( imgs, function( img ) {
+    
+    console.log("Hello");
+    
+    img.addEventListener( 'load', incrementCounter, false );
+    
+    } );
+    
+    }
+    
+    function incrementCounter() {
+    
+    counter++;
+    
+    if ( counter === len ) {
+    
+    console.log( 'All images loaded!' );
+    
+    console.log(imgs[bannerIndex]);
+    
+    cycleBanner(bannerIndex);
+    
+    setInterval( function() {
+    
+    cycleBanner(bannerIndex);
+    
+    }, 3000);
+    
+    }
+    
+    }
+    
+    function cycleBanner(n) {
+    
+    var i;
+    
+    for (i = 0; i < len; i++) {
+    
+    imgs[i].style.display = "none";
+    
+    }
+    
+    imgs[bannerIndex].style.display = "block";
+    
+    bannerIndex = (bannerIndex + 1) % len;
+    
+    }
+    
+    onpageload();
+    
+    </script>
 
 </html>
