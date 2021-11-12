@@ -21,7 +21,9 @@
                 </li>
                 <li><a href="gallery.html">Gallery</a>
                 </li>
-                <li><a href="registration.html" class="active">Registration</a>
+                <li><a href="registration.html">Registration</a>
+                </li>
+                <li><a href="confirm.html" class="active">Confirm</a>
                 </li>
             </ul>
 
@@ -42,7 +44,15 @@
 
     <script>
         window.onload = function () {
-            displayFormData('displayFormData');
+            // displayFormData('displayFormData');
+            var x = document.cookie;
+            var data = x.split(';');
+            var htmlData = "";
+            for (let index = 0; index < data.length; index++) {
+                htmlData = htmlData + data[index] + "\n";
+                
+            }
+            document.getElementById('displayFormData').innerText = htmlData;
         }
 
     </script>

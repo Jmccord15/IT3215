@@ -6,10 +6,10 @@
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <style type="text/css">
 
-    
-        
 
-        
+
+
+
 
     </style>
 </head>
@@ -23,7 +23,7 @@
             <ul class="topnav">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="invitation.html">Invitation</a></li>
-				<li><a href="volunteer.html">Volunteers</a></li>
+                <li><a href="volunteer.html">Volunteers</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="registration.html" class="active">Registration</a></li>
             </ul>
@@ -32,58 +32,83 @@
     </header>
     <section id="pageForm">
         <div id="allFilled"></div>
-        <form action="confirm.html" name="myForm" onsubmit="return validateForm()">
-            
+        <!-- <form action="confirm.html" name="myForm" onsubmit="return validateForm()" method="get"></form> -->
+        <form id="myForm" name="myForm">
+
             <label for="userName">Username:</label>
             <input type="text" name="userName" placeholder="Enter your Username" />
-            <br/>
+            <br />
             <div id="erroruserName" class="errorMsg"></div>
 
-            <label for="Password">Password:</label>
+            <label for="password">Password:</label>
             <input type="password" name="password" placeholder="Enter your Password" />
-            <br/>
+            <br />
             <div id="errorpassword" class="errorMsg"></div>
 
             <label for="passwordVerify">Verify your Password:</label>
             <input type="password" name="passwordVerify" placeholder="Enter in your Password again" />
-            <br/>
+            <br />
             <div id="errorpasswordVerify" class="errorMsg"></div>
 
             <label for="firstName">First Name:</label>
             <input type="text" name="firstName" placeholder="Enter your First Name" />
-            <br/>
+            <br />
             <div id="errorfirstName" class="errorMsg"></div>
 
-            <label for="hostName">Last Name:</label>
+            <label for="lastName">Last Name:</label>
             <input type="text" name="lastName" placeholder="Enter your Last Name" />
-            <br/>
-            <div id="errorhostName" class="errorMsg"></div>
-            
-            
+            <br />
+            <div id="errorlastName" class="errorMsg"></div>
+
+
             <label for="email">Email:</label>
             <input type="text" name="email" placeholder="Enter your Email Address" />
-            <br/>
+            <br />
             <div id="erroremail" class="errorMsg"></div>
 
-            
-			<label for="phoneNumber">Phone Number</label>
+
+            <label for="phoneNumber">Phone Number</label>
             <input type="text" name="phoneNumber" placeholder="Enter your Phone Number" />
-			<label for="signUpNewsletter">Sign up for newsletter:</label>
-			  <input type="radio" name="signUpNewsletter" value="Yes" checked> Yes 
-				<input type="radio" name="signUpNewsletter" value="No"> No
-                <br/>
-                <div id="errorphoneNumber" class="errorMsg"></div>
+            <label for="signUpNewsletter">Sign up for newsletter:</label>
+            <input type="radio" name="signUpNewsletter" value="Yes" checked> Yes
+            <input type="radio" name="signUpNewsletter" value="No"> No
+            <br />
+            <div id="errorphoneNumber" class="errorMsg"></div>
             <input type="submit" value="submit">
-            
+            <!-- <button type="button" onclick="validateForm()">submit</button> -->
+
         </form>
     </section>
 
-    <br/>
-    
+    <br />
+
 
     <footer>This events site is for IT3515 tasks.
     </footer>
 </body>
 <script src="js/validation.js"></script>
 <script src="js/registration.js"></script>
+<script>
+    // const myForm = document.getElementById('myForm');
+
+    document.getElementById('myForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        validateForm();
+        // const formData = new FormData(this);
+        // fetch('confirmation.php', {
+        //     method: 'post',
+        //     body: formData
+        // }).then(function (response) {
+        //     return response.text();
+        // }).then(function (text) {
+        //     console.log(text);
+        // }).catch(function (error) {
+        //     console.error(error);
+        // })
+
+        window.location.href="./confirm.html";
+
+    });
+</script>
+
 </html>
